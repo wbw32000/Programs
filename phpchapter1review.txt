@@ -1,0 +1,28 @@
+William BW (wbw(at)programmer.net)
+
+Review
+
+• What is HTML? What is XHTML? Name two differences between HTML and XHTML.
+ HTML (Hypertext Markup Language) is a markup language that Web browsers use to render/define Web pages.
+ XHTML (Extensible HyperText Markup Language) is an XML markup language that extends versions of HTML
+ Differences include: All XHTML tags must closed, and written in lowercase, nested tags must be well formed, and all tag attributes must be quoted.
+
+• What encoding is your text editor or IDE set to use? Does that match the encoding specified in your generated HTML pages?
+Windows Notepad uses UTF-8, Notepad adds the bytes 0xEF, 0xBB, 0xBF at the start of any document saved as UTF-8. This is the UTF-8 encoding of the Unicode byte order mark (BOM).
+
+• What is CSS and what is it used for?
+CSS (Cascading Style Sheets), format the look and behavior of Web page content defined by HTML and XHTML elements. CSS can be added to a web page by HTML style tags, and by a link HTML tag to incorporate CSS rules defined in an external CSS file.
+
+• What file extension should PHP scripts have for your particular server?
+.php, because the php Web page’s extension tells the server how to process the file: file.php goes through the PHP module.
+
+• What is meant by “Web root directory”? What is the Web root directory for your server?
+The Web root directory, or Web document root, is the directory on the server to which a URL directly points. This is useful when trying to FTP a script to the server.
+
+• How do you test PHP scripts? What happens when PHP scripts are not run through a URL?
+In a two-step process. First we put the PHP script in the appropriate directory for the Web server. Then we run the PHP script in the Web browser by entering the PHP page's URL.
+
+• Name two ways comments can be added to PHP code. Identify some ways you would use comments.
+To add comments (which will be ignored by the computer when it processes the script)...
+Either by putting either // or # at the beginning of the line, or at the end of a PHP line.
+Or, to comment out multiple lines, we can use /* to begin the comment and */ to finish it.
