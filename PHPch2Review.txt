@@ -1,0 +1,28 @@
+PHP for the Web - Chapter 2. Variables > Review
+
+William BW (wbw(at)programmer.net 
+
+- What kind of variable is $_SERVER an example of?
+ $_SERVER is a special pre-defined variable that, used with raw print function print_r, prints the names and values of many server variables.
+
+- What character must all variables begin with?
+ All variables must begin with the character $
+
+- What characters can be used first in a variable&#146;s name? What other characters can be used in a variable&#146;s name, after the first character?
+ Only English alphabetic letter characters (A-Z, a-z) can be used as the first character in a variable's name.
+ After the first character, any characters in any combination of letters, underscores, and numbers, but not spaces. 
+
+- Are variable names case-sensitive or case-insensitive?
+ Case sensitive.
+
+- What does it mean to say that a variable is scalar? What are examples of scalar variable types? What is an example of a nonscalar variable type?
+ A scalar variable (string variable or a number variable) means the variable contains a single value. An array is an example of nonscalar variable type.
+
+- What is the assignment operator?
+ The assignment operator is the equal sign (`=`). It assigns the value on the right to the variable on the left.
+
+- What great debugging technique&#151;with respect to variables&#151;was introduced in this chapter?
+ A good debugging technique is printing out the variables values`.
+
+- What is the difference between using single or double quotation marks?
+ Variables in single quotation marks are treated literally, that is, their names are displayed. Variables in double quotation marks are extrapolated, that is, their values are displayed, replacing their names.
