@@ -1,0 +1,68 @@
+William BW (wbw(at)programmer.net)
+PHP for the Web - Chapter 3. HTML Forms and PHP Review and Pursue
+
+Review 
+Q: What is the significance of a form action attribute?
+A: The action attribute, which is contained in the form tag, sets the page to which the form data would be submitted. It may point to a PHP script.
+
+Q: What is the significance of a form’s method attribute? Is it more secure to use GET or POST? Which method type can be bookmarked in the browser?
+A: Method attribute, in the initial form tag, tells the server how to transmit the data from the form to the handling script. Its values may set to either GET (which visibly sends all the form information as part of the URL) or POST (which sends the information invisibly to the user).
+
+Q: What predefined variable will contain the data from a form submission? Note: There are multiple answers.
+A: From a form submission, the data will be in either
+ $_GET predefined variable array (if the submitted HTML form uses the GET method),
+ or the $_POST predefined variable array (if the HTML form uses the POST method).
+
+Q: Why must an HTML page that contains a form that’s being submitted to a PHP script be loaded through a URL?
+A: An HTML form that contains a form that’s being submitted to a PHP script must be loaded through a URL so that when it’s submitted to the PHP script, that PHP script is also run through a URL. PHP scripts must always be run through a URL.
+
+Q: Under what circumstances will attempts to enable display_errors in a script not succeed? Why is it not secure to enable display_errors on live sites?
+A: When PHP is run under a default configuration, after it has been installed on a Web server, one of the default configuration settings is to not display any 
+errors, i.e. the display_errors setting will be off.
+
+Pursue
+
+1. Load feedback.html in your Web browser without going through a URL (i.e., the address bar would likely start with file://).
+ Fill out and submit the form. Observe the result so that you can recognize this problem, and understand its cause, in case you see similar results in the future.
+ A: The result is 'File not found', because the web browser can't find the php file 'handle_form.php'.
+
+2. If you have not already, and if you can, make sure that display_errors is enabled on your development environment.
+ A: Errors are displayed.
+
+3. If you have not already, and if you can, make sure that error_reporting is set to E_ALL | E_STRICT on your development environment.
+ A: OK.
+
+4. Try introducing different errors in a PHP script—by improperly balancing quotation marks, failing to use semicolons, referring to variables improperly, and so on—to see the result.
+ A: Interesting errors, but easy to fix if they had been accidental.
+
+5. Experiment with the hello.html and the hello.php pages to send different values, including numbers, to the PHP script through the URL.
+ A: Sent values as strings and numbers. 
+
+6. Create a variation on hello.html that sends multiple name=value pairs to a PHP script. Have the PHP script then print all the received values.
+ A: Modified hello.html and hello.php to send/recive/print the value pairs.
+
+7. If you’re the inquisitive type, and don’t mind waiting for answers, try passing more complicated values to a page through the URL.
+ Try using spaces and punctuation to see what happens.
+ A: Sent spaces which were rendered on the page source but, being that HTML displays multiple adjoining spaces as one space, were not displayed on the displayed page.
+ Punctuation did get through and was displayed.
+
+8. Create a new HTML form that performs a task you envision yourself needing (or a lighter-weight version of that functionality).
+ Then create the PHP script that handles the form, printing just the received data.
+ A: chapter3newtask.html and chapter3newtask.php
+
+The Files: 
+eclectichub.info/PHP/Ch3/hello.html
+eclectichub.info/PHP/Ch3/hello.php
+eclectichub.info/PHP/Ch3/feedback.html
+eclectichub.info/PHP/Ch3/handle_form.php
+eclectichub.info/PHP/Ch3/chapter3newtask.html
+eclectichub.info/PHP/Ch3/chapter3newtask.php
+eclectichub.info/PHP/Ch3/PHPch3ReviewAndPursue.txt
+The Code:
+https://github.com/wbw32000/Programs/blob/master/hello.html
+https://github.com/wbw32000/Programs/blob/master/hello.php
+https://github.com/wbw32000/Programs/blob/master/feedback.html
+https://github.com/wbw32000/Programs/blob/master/handle_form.php
+https://github.com/wbw32000/Programs/blob/master/chapter3newtask.html
+https://github.com/wbw32000/Programs/blob/master/chapter3newtask.php
+https://github.com/wbw32000/Programs/blob/master/PHPch3ReviewAndPursue.txt
