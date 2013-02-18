@@ -1,0 +1,58 @@
+William BW (wbw(at)programmer.net)
+PHP for the Web - Chapter 4: Using Numbers - Review and Pursue
+
+Review
+1. What are the four primary arithmetic operators?
+ The four primary arithmetic operators are Addition(+), Subtraction(&#8722;), Multiplication(*), and Division(/)
+2. Why will the following code not work: print "The total is $$total"; What must be done instead?
+ The syntax $$variable, won't work because the combination of two dollar signs creates a different type of variable than the regular intended type. It validates to `the variable of the name in the variable`
+ We may put a space or an HTML tag, such as the span tag, between the dollar sign and the variable name, or we can escape the first dollar sign: print "The total is \$$total";
+
+3. Why must an HTML page that contains a form that's being submitted to a PHP script be loaded through a URL?
+ An HTML page that contains a form that's being submitted to a PHP script ought to be loaded through a URL because when the HTML page is submitted, the PHP script is also run through a URL.
+
+4. What functions can be used to format numerical values? How do you format numbers to a specific number of decimals?
+ 1) The function round() rounds a value (1st entry, a number (or a variable with a numeric value) to a specified number of decimal places (2nd entry, the optional decimal specifier).
+ 2) The function number_format (number,decimals,decimalpoint,separator) works like round(), but may optionally add:
+ - how many decimal points to display, using a dot as decimal point
+ - what string to use as a decimal point
+ - formatting the resulting number with commas as separator.
+
+5. What is the importance of operator precedence?
+ Operator precedence is important because it sets the order in which a series of calculations are executed. For example, multiplication and division takes precedence over addition and subtraction. Parentheses have highest precedence, and are a way to avoid strange/unwanted results.
+
+6. What are the incremental and decremental operators?
+ The incremental and decremental operators are ++ and &#8722;&#8722;, which add(++) and subtract(--) the value of a variable by 1. For example: 
+ $var = 20; // 20
+ $var++; // 21
+ $var-- // 20
+
+7. What are the arithmetic assignment operators?
+ The arithmetic assignment operators (+=, -=, *=, and /=) Each will assign a value to a variable by performing a calculation on it.
+ For example: $num = $num + 5; is equivalent to: $num += 5;
+
+Pursue
+1. Look up the PHP manual page for one of the new functions mentioned in this chapter.
+ Use the links on that page to investigate a couple of other number-related functions PHP has.
+ 1) is_nan() returns true if a value is not a number
+ 2) fmod() returns the remainder (modulo) of the division of the arguments
+ 3) floor() returns the value of a number rounded downwards to the nearest integer
+ 4) sqrt() returns the square root of a number
+
+2. Create another HTML form for taking numeric values.
+ Then create the PHP script that receives the form data, performs some calculations, formats the values, and prints the results.
+ Files: eclectichub.info/PHP/Ch4/ch4MyTriangleArea.html AND eclectichub.info/PHP/Ch4/ch4MyTriangleArea.php
+
+Files:
+eclectichub.info/PHP/Ch4/calculator.html 
+eclectichub.info/PHP/Ch4/handle_calc.php 
+eclectichub.info/PHP/Ch4/ch4MyTriangleArea.html
+eclectichub.info/PHP/Ch4/ch4MyTriangleArea.php
+eclectichub.info/PHP/Ch4/PHPch4ReviewAndPursue.txt
+
+Code:
+https://github.com/wbw32000/Programs/blob/master/ch4calculator.html
+https://github.com/wbw32000/Programs/blob/master/ch4handle_calc.php
+https://github.com/wbw32000/Programs/blob/master/ch4MyTriangleArea.html
+https://github.com/wbw32000/Programs/blob/master/ch4MyTriangleArea.php
+https://github.com/wbw32000/Programs/blob/master/PHPch4ReviewAndPursue.txt
