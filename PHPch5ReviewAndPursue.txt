@@ -78,4 +78,4 @@ https://github.com/wbw32000/Programs/blob/master/ch5.6handle_post.php
 https://github.com/wbw32000/Programs/blob/master/ch5.7handle_post.php
 https://github.com/wbw32000/Programs/blob/master/ch5.7posting.html
 https://github.com/wbw32000/Programs/blob/master/ch5handle_strings.html
-https://github.com/wbw32000/Programs/blob/master//ch5handle_strings.php
+https://github.com/wbw32000/Programs/blob/master/ch5handle_strings.php
