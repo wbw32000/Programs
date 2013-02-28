@@ -1,0 +1,81 @@
+William BW (wbw(at)programmer.net)
+PHP for the Web - Chapter 5: Using Strings - Review and Pursue
+
+If you have any problems with the review questions or the pursue prompts, turn to the book's supporting forum (www.LarryUllman.com/forum/).
+
+Review
+
+1) How do you create a string?
+ To create a string, we can wrap some characters within quotation marks.
+2) What are the differences between using single and double quotation marks?
+ With variables, single quotation marks have its variable characters treated literally; characters inside double quotation marks are interpreted as the variable`s value.
+
+3) What is the concatenation operator? What is the concatenation assignment operator?
+ The concatenation operator is the period (.); it joins strings together into a single string. The concatenation assignment operator is the 'dot and equal sign'; it assigns to a string variable its current value plus the concatenation of a second string.
+
+4) What is the impact of having a newline in a string printed to the browser? How do you convert a newline character to a break tag?
+ A user may enter textarea text over multiple lines by pressing Return/Enter, creating a newline in the textarea's string. To have an effect on a rendered PHP page, PHP's nl2br() function converts newlines into break tags.
+
+5) What problems can occur when HTML is entered into form elements whose values will later be printed back to the Web browser?
+ What steps can be taken to sanctify submitted form data?
+ Submitted HTML tags could affect the rendered page elemnts (tables, CSS, or other unforseen formatting). Also, JavaScript put in HTML script tags could submit JavaScript that could be executed when redisplayed on the page (e.g. cross-site scripting XSS attacks).
+ We can use PHP functions like 
+ htmlspecialchars() (which converts certain HTML tags into their entity versions),
+ htmlentities() (which turns all HTML tags into their entity versions) and
+ strip_tags() which removes all HTML and PHP tags.
+
+6) What function makes data safe to pass in a URL?
+ We can use the PHP function urlencode($string); it takes a string and encodes it (changes its format) so that it can be passed properly as part of a URL.
+ It replaces spaces with plus signs (+) and translates special characters, like the apostrophe, into less problematic versions.
+
+7) How do you escape problematic characters within a string? What happens if you do not escape them?
+ To handle HTML characters that can affect the resulting page's formatting, we can use backslashes, in addition to urlencode().
+
+8) The characters in a string are indexed beginning at what number?
+ The characters in a string are indexed beginning at zero (0).
+
+9) What does the trim() function do? 
+ The trim(stringname,charlist) function removes whitespaces and other predefined characters from both sides of a string. It can remove 
+    "\0" - NULL, "\t" - tab, "\n" - new line, "\x0B" - vertical tab, "\r" - carriage return, " " - ordinary white space
+
+Pursue
+
+1) Look up the PHP manual page for one of the new functions mentioned in this chapter. Use the links on that page to examine a couple of other string-related functions PHP has.
+2) Check out the PHP manual page specifically for the substr() function. Read the other examples found on that page to get a better sense of how substr() can be used.
+3) Write the thanks.php script that goes along with Script 5.5. If you need help, revisit the hello.php script from Chapter 3 (Script 3.7).
+ [thanks.php greets the user by name and email address]
+ Files: ch5.5posting.html, ch5.5handle_post.php, ch5.5thanks.php
+4) Rewrite the print statement in the final version of handle_post.php (Script 5.7), so that it uses single quotation marks and concatenation instead of double quotation marks.
+ Files: ch5.7posting.html and ch5.7handle_post.php
+5) Create another HTML form for taking string values. Then create the PHP script that receives the form data, addresses any HTML or PHP code, manipulates the data in some way, and prints out the results.
+ Files: ch5handle_strings.html and ch5handle_strings.php
+
+Files:
+eclectichub.info/PHP/Ch5/PHPch5ReviewAndPursue.txt
+eclectichub.info/PHP/Ch5/ch5.1posting.html
+eclectichub.info/PHP/Ch5/ch5.2handle_post.php
+eclectichub.info/PHP/Ch5/ch5.3handle_post.php
+eclectichub.info/PHP/Ch5/ch5.4handle_post.php
+eclectichub.info/PHP/Ch5/ch5.5handle_post.php
+eclectichub.info/PHP/Ch5/ch5.5posting.html
+eclectichub.info/PHP/Ch5/ch5.5thanks.php
+eclectichub.info/PHP/Ch5/ch5.6handle_post.php
+eclectichub.info/PHP/Ch5/ch5.7handle_post.php
+eclectichub.info/PHP/Ch5/ch5.7posting.html
+eclectichub.info/PHP/Ch5/ch5handle_strings.html
+eclectichub.info/PHP/Ch5/ch5handle_strings.php
+
+Code:
+https://github.com/wbw32000/Programs/blob/master/PHPch5ReviewAndPursue.txt
+https://github.com/wbw32000/Programs/blob/master/ch5.1posting.html
+https://github.com/wbw32000/Programs/blob/master/ch5.2handle_post.php
+https://github.com/wbw32000/Programs/blob/master/ch5.3handle_post.php
+https://github.com/wbw32000/Programs/blob/master/ch5.4handle_post.php
+https://github.com/wbw32000/Programs/blob/master/ch5.5handle_post.php
+https://github.com/wbw32000/Programs/blob/master/ch5.5posting.html
+https://github.com/wbw32000/Programs/blob/master/ch5.5thanks.php
+https://github.com/wbw32000/Programs/blob/master/ch5.6handle_post.php
+https://github.com/wbw32000/Programs/blob/master/ch5.7handle_post.php
+https://github.com/wbw32000/Programs/blob/master/ch5.7posting.html
+https://github.com/wbw32000/Programs/blob/master/ch5handle_strings.html
+https://github.com/wbw32000/Programs/blob/master//ch5handle_strings.php
