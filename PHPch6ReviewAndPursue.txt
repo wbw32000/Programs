@@ -75,7 +75,7 @@ Files:
 	http://eclectichub.info/PHP/Ch6/ch6YearVariable_handle_reg.php 
 	http://eclectichub.info/PHP/Ch6/ch6YearVariable_register.php
 
-Code: https://github.com/wbw32000/Programs/blob/master/
+Code: 
 	https://github.com/wbw32000/Programs/blob/master/PHPch6ReviewAndPursue.txt 
 	https://github.com/wbw32000/Programs/blob/master/ch6.1register.html 
 	https://github.com/wbw32000/Programs/blob/master/ch6.2handle_reg.php 
