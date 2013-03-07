@@ -1,0 +1,98 @@
+William BW (wbw(at)programmer.net)
+PHP for the Web - Chapter 6: Control Structures - Review and Pursue
+
+If you have any problems with the review questions or the pursue prompts, turn to the books supporting forum (www.LarryUllman.com/forum/).
+
+Review
+
+- Why is it important to have a user confirm their password during the registration process?
+  It's important to have a user confirm their password during the registration process (given that password input types don't reveal what the user enters),
+  because requiring the user to enter passwords twice ensures that the user knows exactly what password was provided.
+
+- What is the basic structure of an if conditional in PHP? An if-else conditional? An if-elseif? An if-elseif-else?
+  . For a standard if conditional: The condition within parentheses, then the statements (commands to be executed) within curly brackets, each statement ending with a semicolon.
+  . For an if-else conditional: Starting with standard if structure, then adding else followed by curly brackets that contain the else's default action statements, each statement ending with a semicolon.
+  . For an if-elseif conditional: Starting with standard if structure, then adding elseif followed by parenthesis that contain the elseif's condition statement, followed by curly brackets that contain the elseif's statements, each statement ending with a semicolon.
+  . For an if-elseif-else conditional: Starting with standard if structure, then adding elseif followed by parenthesis that contain the elseif's condition statement, followed by curly brackets that contain the elseif's statements, followed by an else followed by curly brackets that contain the else's default action statements, each statement ending with a semicolon.
+
+- What are the differences between the empty() and isset() functions? 
+ . The empty() function returns TRUE if a variable has no value, has a value of 0, or has a value of FALSE (an 'empty' value). Otherwise, it returns FALSE
+ . The isset() function returns TRUE if a variable has any value (including 0, FALSE, or an empty string). Otherwise it returns FALSE.
+
+- What is the assignment operator? What is the equality operator?
+ . The assignment operator (the equal sign '=') assigns a value to a variable. It always returns TRUE.
+ . The equality operator compares two values, and returns TRUE is the values are equal. Otherwise it returns FALSE.
+
+- Without knowing anything about $var, will the following conditional be TRUE or FALSE? Why?  if ($var = 'donut') {
+ . Yes, because the assignment operator ('=') assigns the value donut to the variable $var, and always returns TRUE.
+
+- What do these operators mean?
+    && ... A logical 'and' operator compares two values and returns TRUE if they are equal to each other.
+    || ... A logical 'or' operator compares two values and returns TRUE if either is TRUE, or both are TRUE.
+    ! ... A logical 'not' operator reverses the logical value of the proceeding value, from TRUE to FALSE, or from FALSE to TRUE.
+
+- What is the syntax of a switch conditional? When is a switch most commonly used?
+ The switch conditional starts with the keyword 'switch', followed by one variable within parenthesis, then, within a set of curly braces, a series of 'case' and 'value' statements and  and a colon (not a semicolon), which preface their associated statements and a 'break' statement for closing each case, and ending with a 'default' with colon and its statements.
+ The switch conditional is most comonly used when there are to many if-elseif-else conditionals.
+
+- What is the syntax of a for loop?
+ The for loop sonsists of a 'for' keyword followed by, in parenthesis, an initial expression (executed once, when the first time the loop is called), then
+ the condition (used to determine whether to execute the statements), and
+ the closing expression (executed each time the condition is found to be TRUE, but only after the statements are executed).
+
+Pursue
+
+1) Check out the PHP manuals pages for the various operators.
+2) Rewrite handle_reg.php so that it uses a variable for the current year, instead of hard-coding that value.
+     http://eclectichub.info/PHP/Ch6/ch6YearVariable_register.php with http://eclectichub.info/PHP/Ch6/ch6YearVariable_handle_reg.php
+
+3) For debugging purposes, add code to the beginning of the handle_reg.php script that prints out the values of the received variables. Hint: Theres a short and a long way to do this.
+     http://eclectichub.info/PHP/Ch6/ch6PrintReceivedVars_register.php with http://eclectichub.info/PHP/Ch6/ch6PrintReceivedVars_handle_reg.php
+
+4) Rewrite one of the versions of handle_reg.php so that it prints the users favorite color selection in the users favorite color. Hint: Youll want to use CSS and concatenation.
+    http://eclectichub.info/PHP/Ch6/ch6UserColor_register.php with http://eclectichub.info/PHP/Ch6/ch6UserColor_handle_reg.php
+
+5) Update handle_reg.php so that it validates the users birthday by looking at the three individual form elements: month, day, and year. Create a variable that represents the users birthday in the format XX/DD/YYYY (again, youll use concatenation for this).
+    http://eclectichub.info/PHP/Ch6/ch6MonthDayYear_register.php with http://eclectichub.info/PHP/Ch6/ch6MonthDayYear_handle_reg.php
+
+Files: 
+  http://eclectichub.info/PHP/Ch6/PHPch6ReviewAndPursue.txt 
+	http://eclectichub.info/PHP/Ch6/ch6.1register.html 
+	http://eclectichub.info/PHP/Ch6/ch6.2handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6.3handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6.4handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6.5handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6.6handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6.7handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6.8handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6.9register.php 
+	http://eclectichub.info/PHP/Ch6/ch6MonthDayYear_handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6MonthDayYear_register.php 
+	http://eclectichub.info/PHP/Ch6/ch6PrintReceivedVars_handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6PrintReceivedVars_register.php 
+	http://eclectichub.info/PHP/Ch6/ch6UserColor_handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6UserColor_register.php 
+	http://eclectichub.info/PHP/Ch6/ch6YearVariable_handle_reg.php 
+	http://eclectichub.info/PHP/Ch6/ch6YearVariable_register.php
+
+Code: https://github.com/wbw32000/Programs/blob/master/
+	https://github.com/wbw32000/Programs/blob/master/PHPch6ReviewAndPursue.txt 
+	https://github.com/wbw32000/Programs/blob/master/ch6.1register.html 
+	https://github.com/wbw32000/Programs/blob/master/ch6.2handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6.3handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6.4handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/Ch6/ch6.5handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6.6handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6.7handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6.8handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6.9register.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6MonthDayYear_handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6MonthDayYear_register.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6PrintReceivedVars_handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6PrintReceivedVars_register.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6UserColor_handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6UserColor_register.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6YearVariable_handle_reg.php 
+	https://github.com/wbw32000/Programs/blob/master/ch6YearVariable_register.php
+
+
