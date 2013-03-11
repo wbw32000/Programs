@@ -1,0 +1,41 @@
+William BW (wbw(at)programmer.net)
+PHP for the Web - Chapter 7: Using Arrays - Review and Pursue
+
+If you have any problems with the review questions or the pursue prompts, turn to the books supporting forum (www.LarryUllman.com/forum/).
+
+Review
+Q1) Whats the difference between an indexed array and an associative array? 
+A1: An indexed array has numbers as keys; an associative array (aka a hash) has strings as keys.
+
+Q2) When should you use quotation marks for an array's key or value? When shouldnt you?
+A2: We would use quotation marks for an array's keys or values when the keys or values are strings.
+    We wouldn't use quotation marks for an array's keys or values when the keys or values are numbers.
+
+Q3) How do you print a specific array element? How do you print every element in an array?
+A3: We would print a specific array element by printing the array name while referring to the array element's index in brackets. e.g. $arrayname[0].
+    We would print every element in an array by using:
+   1. the function print_r($arrayname),
+   2. a foreach() loop in assigning the current array element's key to a $key (or $k) variable, and, with an equal-greater-than symbol (=>) the value to $value (or $v).
+      e.g. foreach ($array as $key => $value) { print "<p>Key is $key. Value is $value</p>";}
+   3. the var_dump() function, which would also show the array's structure in a more detailed format.
+
+Q4) What happens if you dont use the square brackets when adding an element to an array?
+A4: If we don't use the square brackets when adding an element to an array, the new value (a string or number), will replace the existing array.
+
+Q5) What function returns the number of elements in an array?
+A5: To return the number of elements in an array,  we can use sizeof() or count().
+
+Q6) When must you use curly brackets for printing array elements?
+Q7) What is the difference between the sort() and asort() functions? Between sort() and rsort()?
+Q8) What is the syntax for explode()? For implode()? If you dont remember, check out the PHP manual page for either function.
+
+Pursue
+1) Check out the PHP manuals pages for the array-related functions.
+  Look into some of the other available array functions.
+  In particular Id recommend familiarizing yourself with array_key_exists(), array_search(), and in_array().
+2) Rewrite soups2.php so that it displays the number of elements in the array without using a separate variable.
+  Hint: Youll need to concatenate the count() function call into the print statement.
+3) Create another script that creates and displays a multidimensional array (or some of it, anyway).
+4) Rewrite list.php so that it uses foreach instead of implode(), but still prints each sorted word on its own line in the browser.
+  Also add some form validation so that it only attempts to parse and sort the string if it has a value.
+
