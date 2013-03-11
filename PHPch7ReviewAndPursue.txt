@@ -1,8 +1,6 @@
 William BW (wbw(at)programmer.net)
 PHP for the Web - Chapter 7: Using Arrays - Review and Pursue
 
-If you have any problems with the review questions or the pursue prompts, turn to the books supporting forum (www.LarryUllman.com/forum/).
-
 Review
 Q1) Whats the difference between an indexed array and an associative array? 
 A1: An indexed array has numbers as keys; an associative array (aka a hash) has strings as keys.
@@ -14,28 +12,82 @@ A2: We would use quotation marks for an array's keys or values when the keys or 
 Q3) How do you print a specific array element? How do you print every element in an array?
 A3: We would print a specific array element by printing the array name while referring to the array element's index in brackets. e.g. $arrayname[0].
     We would print every element in an array by using:
-   1. the function print_r($arrayname),
-   2. a foreach() loop in assigning the current array element's key to a $key (or $k) variable, and, with an equal-greater-than symbol (=>) the value to $value (or $v).
+   1. the function print_r($arrayname)
+   2. a for() or foreach() loop in assigning the current array element's key to a $key (or $k) variable, and, with an equal-greater-than symbol (=>) the value to $value (or $v).
       e.g. foreach ($array as $key => $value) { print "<p>Key is $key. Value is $value</p>";}
-   3. the var_dump() function, which would also show the array's structure in a more detailed format.
+   3. the var_dump() function, which would also show the array's structure in a more detailed format (use for multidimensional arrays).
 
-Q4) What happens if you dont use the square brackets when adding an element to an array?
+Q4) What happens if you don't use the square brackets when adding an element to an array?
 A4: If we don't use the square brackets when adding an element to an array, the new value (a string or number), will replace the existing array.
 
 Q5) What function returns the number of elements in an array?
 A5: To return the number of elements in an array,  we can use sizeof() or count().
 
 Q6) When must you use curly brackets for printing array elements?
+A6: We must you use curly brackets for printing array elements when printing array values that have strings for keys, and to separate a variable reference from a dollar sign or other characters.
+
 Q7) What is the difference between the sort() and asort() functions? Between sort() and rsort()?
+Q7: We use sort() to sort the array's values without regard to the keys;
+  We use rsort() to sort the array's values, without regard to the keys, in reverse order.
+  Also,  asort() sorts the values while maintaining the correlation between each value and its key, and 
+  arsort() sorts the values in reverse while maintaining the key correlation.
+  ksort() sorts by the keys while maintaining the correlation between the key and its value, and 
+  krsort(), conversely, sorts the keys in reverse. 
+  shuffle() randomly reorganizes the order of an array.
+
 Q8) What is the syntax for explode()? For implode()? If you dont remember, check out the PHP manual page for either function.
+Q8: implode() (turns an array into a string, similar to join()) has a syntax of:  $arrayname = explode(separator, $stringname); the separator characters define where one value ends and another begins, for example, a comma, a tab, or a blank space.
+    explode() (turns a string into an array) has a syntax of: $stringname = implode(glue, $arrayname); in this case, the separator is the glue that would be replaced to nothing between characters in the string.
+
 
 Pursue
 1) Check out the PHP manuals pages for the array-related functions.
   Look into some of the other available array functions.
   In particular Id recommend familiarizing yourself with array_key_exists(), array_search(), and in_array().
+  array_key_exists(key,array)  checks an array for a specified key, and returns true if the key exists and false if the key does not exist.
+  array_search(value,array,strict)  searches an array for a value and returns the key.
+  in_array()  searches an array for a specific value and returns TRUE if the value is found in the array, or FALSE otherwise.
+
 2) Rewrite soups2.php so that it displays the number of elements in the array without using a separate variable.
-  Hint: Youll need to concatenate the count() function call into the print statement.
+   Hint: Youll need to concatenate the count() function call into the print statement.
+    eclectichub.info/PHP/Ch7/ch7count_soups2.php
+
 3) Create another script that creates and displays a multidimensional array (or some of it, anyway).
+   eclectichub.info/PHP/Ch7/ch7multidimensional_array.php
+
 4) Rewrite list.php so that it uses foreach instead of implode(), but still prints each sorted word on its own line in the browser.
   Also add some form validation so that it only attempts to parse and sort the string if it has a value.
+   ch7ForeachValidate_list.html AND ch7ForeachValidate_list.php
+
+ Usable Files:
+ http://www.eclectichub.info/PHP/Ch7/PHPch7ReviewAndPursue.txt
+ http://www.eclectichub.info/PHP/Ch7/ch7.1soups1.php
+ http://www.eclectichub.info/PHP/Ch7/ch7.2soups2.php
+ http://www.eclectichub.info/PHP/Ch7/ch7.3soups3.php
+ http://www.eclectichub.info/PHP/Ch7/ch7.4books.php
+ http://www.eclectichub.info/PHP/Ch7/ch7.5sort.php
+ http://www.eclectichub.info/PHP/Ch7/ch7.6list.html
+ http://www.eclectichub.info/PHP/Ch7/ch7.7list.php
+ http://www.eclectichub.info/PHP/Ch7/ch7.8event.html
+ http://www.eclectichub.info/PHP/Ch7/ch7.9event.php
+ http://www.eclectichub.info/PHP/Ch7/ch7count_soups2.php
+ http://www.eclectichub.info/PHP/Ch7/ch7multidimensional_array.php
+ http://www.eclectichub.info/PHP/Ch7/ch7ForeachValidate_list.html
+ http://www.eclectichub.info/PHP/Ch7/ch7ForeachValidate_list.php
+
+ Code Files:
+ https://github.com/wbw32000/Programs/blob/master/PHPch7ReviewAndPursue.txt
+ https://github.com/wbw32000/Programs/blob/master/ch7.1soups1.php
+ https://github.com/wbw32000/Programs/blob/master/ch7.2soups2.php
+ https://github.com/wbw32000/Programs/blob/master/ch7.3soups3.php
+ https://github.com/wbw32000/Programs/blob/master/ch7.4books.php
+ https://github.com/wbw32000/Programs/blob/master/ch7.5sort.php
+ https://github.com/wbw32000/Programs/blob/master/ch7.6list.html
+ https://github.com/wbw32000/Programs/blob/master/ch7.7list.php
+ https://github.com/wbw32000/Programs/blob/master/ch7.8event.html
+ https://github.com/wbw32000/Programs/blob/master/ch7.9event.php
+ https://github.com/wbw32000/Programs/blob/master/ch7count_soups2.php
+ https://github.com/wbw32000/Programs/blob/master/ch7multidimensional_array.php
+ https://github.com/wbw32000/Programs/blob/master/ch7ForeachValidate_list.html
+ https://github.com/wbw32000/Programs/blob/master/ch7ForeachValidate_list.php
 
