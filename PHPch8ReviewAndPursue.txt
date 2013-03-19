@@ -1,0 +1,104 @@
+William BW (wbw(at)programmer.net)
+PHP for the Web - Chapter 8 - Creating Web Applications - Review and Pursue
+
+Review
+
+1) What is the difference between include() and required()?
+  The functions include ('file.php'); AND require ('file.html'); can incorporate separate pages with particular elements into the main PHP pages.
+  When an include() fails, the PHP script will generates a warning (E_WARNING) but the script will continue to run.
+  When a require() fails, it will produce a fatal error (E_COMPILE_ERROR) and stop the execution of the script.
+
+2) Why can you put PHP code into an included file even when it uses an .html extension?
+  When a main file or parent file (has include() or require() lines) incorporates an HTML file, PHP code the result is the same as if the included code (that file's contents) were part of the parent file in the first place. This happens regardless of what extension the included file has, because it&#146;s the extension of the including file that counts.
+
+3) What are the differences between relative and absolute references to a file?
+ An absolute reference or path is a complete, specific address, e.g. include('C:\inetpub\wwwfiles\file.php'); AND include('/Users/larry/Sites/file.php');
+ A Relative reference (relative path) shows where the included file is in relation to the parent file. e.g.
+  include('file.php'); AND
+  include('./file.php'); AND
+  include('templates/header.html'); AND 
+  include('../file.php'); 
+
+4) How do you define a constant? Are constant names case-sensitive or case-insensitive? How do you check if a constant has been defined?
+  A constant is another data type, an identifier (name) for a simple value which cannot be changed (Unlike variables' values, which can change).
+ Constants' values are assigned values using the function: define('CONSTANT_NAME', value);
+ A constant's value cannot be printed using the constants name within quotation marks.
+
+5) What is the epoch? What is a timestamp?
+ The epoch is defined as midnight on January 1, 1970. A timestamp is number representing how many seconds have passed since the epoch.
+ The time() function returns the timestamp for the current moment.
+ The mktime() function can return a timestamp for a particular time and date:
+  mktime(hour, minute, second, month, day, year);
+
+6) What is the significance of $_SERVER['REQUEST_METHOD']?
+ The function $_SERVER['REQUEST_METHOD'] shows the request method (Usually 'GET' and 'POST', but also 'HEAD' and 'PUT') that was used to access the page.
+ When a script page submits back to itself, both GET and POST requests are made. The first, GET, loads the form. If the form used a POST method, the second request will be POST and can be tested by $_SERVER['REQUEST_METHOD'].
+
+7) How do you have a form element &#147;remember&#148; previously submitted values?
+ A  form element &#147;remember&#148; previously submitted values by using a sticky form, by either by setting the value attribute of text inputs, or by
+having PHP preset that value, printing the appropriate variable between the quotation marks. Using isset(), it's better to check first that the variable is set.
+ e.g. value="<?php if (isset($_POST['first_name']) { print $_POST['first_name']; } ?>"
+
+8) How can you see a PHP error that occurs within a form element (e.g., when presetting a form&#146;s element&#146;s value)?
+ We can see a PHP error that occurs within a form element by checking that the variable is set before printing it, using isset().
+  e.g. value="<?php if (isset($_POST['first_name']) { print $_POST['first_name']; } ?>"
+
+9) What does the &#147;headers already sent&#148; error mean? How can it be prevented?
+ It means that some text functions, HTML, or a blank space in the script were called before the header(), setcookie(), or session_start() were called in the script.
+
+Chapter 8 Exercise Files:
+http://www.eclectichub.info/PHP/Ch8/books.php     
+http://www.eclectichub.info/PHP/Ch8/ch8.10register.php 
+http://www.eclectichub.info/PHP/Ch8/ch8.13login.php
+http://www.eclectichub.info/PHP/Ch8/ch8.14welcome.php
+http://www.eclectichub.info/PHP/Ch8/ch8.1template.html
+http://www.eclectichub.info/PHP/Ch8/ch8.4index.php
+http://www.eclectichub.info/PHP/Ch8/ch8.5books.php
+http://www.eclectichub.info/PHP/Ch8/ch8.8login.php 
+http://www.eclectichub.info/PHP/Ch8/ch8.9register.php
+http://www.eclectichub.info/PHP/Ch8/index.php
+http://www.eclectichub.info/PHP/Ch8/login.php 
+http://www.eclectichub.info/PHP/Ch8/register.php 
+http://www.eclectichub.info/PHP/Ch8/template.html
+http://www.eclectichub.info/PHP/Ch8/welcome.php
+http://www.eclectichub.info/PHP/Ch8/templates/ch8.11header.html
+http://www.eclectichub.info/PHP/Ch8/templates/ch8.12footer.html
+http://www.eclectichub.info/PHP/Ch8/templates/ch8.2header.html
+http://www.eclectichub.info/PHP/Ch8/templates/ch8.3footer.html
+http://www.eclectichub.info/PHP/Ch8/templates/ch8.6header.html
+http://www.eclectichub.info/PHP/Ch8/templates/ch8.7header.html
+http://www.eclectichub.info/PHP/Ch8/templates/footer.html
+http://www.eclectichub.info/PHP/Ch8/templates/header.html
+
+Pursue
+
+1) Create a new prototype design for this chapter&#146;'s examples, and then create new header and footer files. View any of the site&#146;s pages again (you should not need to change any of the PHP scripts).
+ DONE: see functional files list.
+2) Change the parameters to the date() function in header.html to display the date and/or time in a different manner.
+ DONE: http///www.eclectichub.info/PHP/Ch8/templates/ch8Pheader.html
+3) Rewrite the password conditionals found in register.php as a nested pair of conditionals. Hint: See Chapter 6 for examples.
+ DONE: http://www.eclectichub.info/PHP/Ch8/ch8Pregister.php
+4) If you&#146;re using PHP 5.2 or later, check out the PHP manual pages for the Filter extension. Then incorporate the filter_var() function to validate the email address in register.php.
+ // PURSUE - Tried to incorporate the filter_var() function to validate the email address
+ //if ( empty($_POST['email']) OR !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ) {
+ // Fatal error: Call to undefined function: filter_var() in /srv/disk1/wbw/www/eclectichub.info/PHP/Ch8/ch8Pregister.php
+
+5) Change the subject and body of the email sent upon (pseudo-) registration to something more interesting and informative.
+ DONE: http://www.eclectichub.info/PHP/Ch8/ch8Pregister.php
+
+Pursue Functional Files:
+http://www.eclectichub.info/PHP/Ch8/ch8Pcakes.php
+http://www.eclectichub.info/PHP/Ch8/ch8Pindex.php
+http://www.eclectichub.info/PHP/Ch8/ch8Plogin.php
+http://www.eclectichub.info/PHP/Ch8/ch8Pregister.php
+http://www.eclectichub.info/PHP/Ch8/templates/ch8Pfooter.html
+http://www.eclectichub.info/PHP/Ch8/templates/ch8Pheader.html
+
+Pursue Code Files:
+https://github.com/wbw32000/Programs/blob/master/ch8Pcakes.php
+https://github.com/wbw32000/Programs/blob/master/ch8Pindex.php
+https://github.com/wbw32000/Programs/blob/master/ch8Plogin.php
+https://github.com/wbw32000/Programs/blob/master/ch8Pregister.php
+https://github.com/wbw32000/Programs/blob/master/ch8Pfooter.html
+https://github.com/wbw32000/Programs/blob/master/ch8Pheader.html
+.
