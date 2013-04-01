@@ -1,0 +1,87 @@
+William BW (wbw(at)programmer.net)
+PHP for the Web - Chapter 9 - Cookies and Sessions - Review and Pursue
+
+If you have any problems with the review questions or the pursue prompts, turn to the book’s supporting forum (www.LarryUllman.com/forum/).
+
+Review
+1) Where does a cookie store data? Where does a session store data? Which is generally more secure?
+ A cookie stores data in the client web browser. A session stores data in a file on the server. The session is generally more secure, because the data is not transmitted back and forth between the client and server repeatedly.
+
+2) Name two debugging techniques when trying to solve issues involving cookies.
+  1. Printing out the variable values in PHP scripts.
+  2. Using the web browser to notify when a cookie is being sent. e.g.
+   2.1 Internet Explorer: Tools menu - Internet Options - Privacy tab - Settings - Advanced button - Override automatic cookie handling - Prompt for both First-party and Third-party Cookies. Also IE: Tools menu - Developer Tools window.
+   2.2 Firefox - install cookie related extensions (like Firecookie or Firebug). Can also stablish custom cookie behavior with Firefox Options/Preferences window - Privacy panel - 'Use custom settings for history'.
+   2.3 Mac OSX Safari - Preferences window - Security tab.
+
+3) How do the path and domain arguments to the setcookie() function affect the accessibility of the cookie?
+ The path and domain arguments to the function setcookie(name, value, expiration, path, domain, secure, httponly); 
+ affect the accessibility of the cookie by limitting a cookie to a specific folder in a web site (the path) or to a specific domain. 
+  With the path argument, we can limit a cookie to exist only while a user is in a specific subfolder of the domain, e.g.
+   setcookie(name, value, time()+3600, '/subfolder/');
+  Since cookies are already specific to a domain, the domain argument can be used to limit a cookie to a subdomain, such as forum.example.com. 
+   setcookie(name, value, time()+3600, '', 'forum.example.com');
+
+4) How do you delete a cookie?
+   We can delete/destroy an existing cookie of a given name by 
+ 4.1 using the setcookie() function with the cookie name but no value.
+ 4.2 by setting the cookie's expiration date in the past.
+
+5) What function must every page call if it needs to assign or access session data? 
+ To assign or access (or create or delete) session data, every page must call the session_start() function, which will try to send a cookie the first time a session is started. session_start() must be called before any HTML or white space is sent to the Web browser.
+
+6) Why do sessions also use cookies (by default)?
+ Each user's session ID corresponds to the name of the text file on the server that stores the user's session data.
+ For every PHP script on a site to associate the same session data with a particular user, the session ID must be tracked.
+ By default, user's session ID is sent as a cookie to the user's Web browser.
+ Later PHP pages will use thhat cookie to retrieve the user's session ID and access the user's session information.
+
+
+Pursue
+
+1) Install the Firebug extension for Firefox, if you have not already. Install Firefox first, if you haven't!
+ Done.
+
+2) Look up the PHP manual page for the setcookie() function. Review the information and user comments there for added instructions on cookies. 
+ OK.
+
+3) Rewrite customize.php so that the script also applies the user's preferences. Hint: You need to take into account the fact that the cookies aren't available immediately after they've been set.
+ Instead, you would write the CSS code using the $_GET values after the form has been submitted, the $_COOKIE values upon first arriving at the page (if the cookies exist), and the default values otherwise.
+ OK.
+
+4) Make the form in customize.php sticky, so that it reflects the user's current choices.
+ Done.
+
+5) Rewrite welcome.php so that the print statement that greets the user by email address uses double quotation marks. 
+ Tried.
+ Note: Session server rights are not accessible beyond the initial file.
+
+6) For an added challenge, rewrite welcome.php so that the print statement that indicates how long the user has been logged in also uses double quotation marks. Hint: You'll need to use a variable.
+ OK.
+
+7) Rewrite the last three scripts so that the session uses a custom name.
+ OK.
+
+Chapter Exercise Files:
+ http://www.eclectichub.info/PHP/Ch9/PHPch9ReviewAndPursue.txt
+ http://www.eclectichub.info/PHP/Ch9/ch9.1customize.php
+ http://www.eclectichub.info/PHP/Ch9/ch9.2view_settings.php
+ http://www.eclectichub.info/PHP/Ch9/ch9.3customize.php
+ http://www.eclectichub.info/PHP/Ch9/ch9.4reset.php
+ http://www.eclectichub.info/PHP/Ch9/ch9.6login.php
+ http://www.eclectichub.info/PHP/Ch9/ch9.7welcome.php
+ http://www.eclectichub.info/PHP/Ch9/ch9.8logout.php
+
+Functional Pursue Files:
+ http://www.eclectichub.info/PHP/Ch9/ch9Pcustomize.php
+ http://www.eclectichub.info/PHP/Ch9/ch9Plogin.php
+ http://www.eclectichub.info/PHP/Ch9/ch9Pwelcome.php
+ http://www.eclectichub.info/PHP/Ch9/ch9Plogout.php
+
+Code Pursue Files:
+ https://github.com/wbw32000/Programs/blob/master/ch9Pcustomize.php
+ https://github.com/wbw32000/Programs/blob/master/ch9Plogin.php
+ https://github.com/wbw32000/Programs/blob/master/ch9Pwelcome.php
+ https://github.com/wbw32000/Programs/blob/master/ch9Plogout.php
+
+.
