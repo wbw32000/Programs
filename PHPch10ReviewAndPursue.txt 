@@ -1,0 +1,78 @@
+William BW (wbw(at)programmer.net)
+PHP for the Web - Chapter 10 - Creating Functions - Review and Pursue
+
+If you have any problems with the review questions or the pursue prompts, turn to the books supporting forum (www.LarryUllman.com/forum/).
+
+Review
+
+1) What is the basic syntax of a user-defined function?
+ 1A:The basic syntax of a user-defined function is: 
+  1. The keyword 'function'.
+  2. The name of the function, without spaces.
+  3. Within parentheses, the function arguments.
+  4. Within curly braces, the statements in the body of the function.
+
+2) What naming rules must your own functions abide by?
+ 2A: In its definition, a function name must start with a letter or underscore, followed by any number of letters, numbers, or underscores, and no spaces.
+
+3) What naming rules must function arguments abide by?
+ Defined function arguments are in the form of a list, which is a comma-delimited list of expressions.
+ 3A: Each argument, evaluated from left to right, is a variable, which is defined using the same naming rules as any other variable in PHP.
+ If the argument passes by value, it starts with a dollar sign($). e.g. $my_string
+ If the argument passes by reference, it starts with an ampersand (&) and a dollar sign($). e.g. &$my_string
+
+4) How do you provide a default value for a functions argument?
+ 4A: We can provide a default value for a function argument by assigning a value to the argument in the function definition. e.g. function say_hi($arg1=`there')
+
+5) In the example code in the Understanding Variable Scope section of the chapter, why does the code use \$n? What would happen if that backslash wasn t there?
+ 5A: The code uses \$n to print, at the start of the printed statement, the name of the variable and not the value of the variable. If that backslash wasn t there, the value of the variable would be printed at the start of the printed statement.
+
+6) What is variable scope? What scope does a function argument variable have?
+ 6A: The scope of a variable is the realm in which it exists. e.g.
+ - Variables in a script exist for the life of that script. i.e. single scope.
+ - Environment variables, like $_SERVER['PHP_SELF'], exist throughout every PHP script on the server. 
+ - Function variables (the arguments of a function and variables defined within the function), are local variables with local scope, and exist only within that function and aren’t accessible outside of the function.
+ - Global variables, made by global statements, turn local variables with local scope into global variables with global scope.
+ - Superglobal array variables ($_GET, $_POST, $_COOKIE, and $_SESSION) have the added benefit that they’re always available inside functions without requiring the global statement within a script.
+
+7) What scope does a variable in an included file have? Note: This is a tricky one!
+ 7A: A variable in an included file has a single scope. i.e. Like a variable in a script, it exists for the life of that script.
+
+Pursue
+
+1.1 Make the function in menus.php take arguments to indicate the starting year and the number of years to generate. 
+1.2 Make the later argument have a default value. OK.
+1.3 Then rewrite the function body so that it uses these values in the year for loop. OK.
+ http://www./eclectichub.info/PHP/Ch10/ch10Pmenus.php 
+
+2. Rewrite the make_text_input() function so that it can be told whether to look for an existing value in either $_POST or $_GET. OK.
+ http://www./eclectichub.info/PHP/Ch10/ch10Psticky1.php 
+
+3. Create a variation on the make_text_input() function that can create a text input or a password input, depending upon how the function is called. OK.
+ http://www./eclectichub.info/PHP/Ch10/ch10Psticky2.php 
+
+4. Come up with an idea for, create, and use your own custom function.
+ Function to convert between metric and imperial weight units.
+ http://www./eclectichub.info/PHP/Ch10/ch10Pconverter.php  // working on it 
+
+Chapter Exercise Files:
+http://www./eclectichub.info/PHP/Ch10/PHPch10ReviewAndPursue.txt     
+http://www./eclectichub.info/PHP/Ch10/ch10.1menus.php     
+http://www./eclectichub.info/PHP/Ch10/ch10.2sticky1.php     
+http://www./eclectichub.info/PHP/Ch10/ch10.4calculator.php     
+http://www./eclectichub.info/PHP/Ch10/ch10.5calculator.php
+
+Functional Pursue Files: 
+http://www./eclectichub.info/PHP/Ch10/ch10Pmenus.php
+http://www./eclectichub.info/PHP/Ch10/ch10Psticky1.php
+http://www./eclectichub.info/PHP/Ch10/ch10Psticky1.php
+http://www./eclectichub.info/PHP/Ch10/ch10Pconverter.php
+
+Code Pursue Files: 
+https://github.com/wbw32000/Programs/blob/master/ch10Pmenus.php
+https://github.com/wbw32000/Programs/blob/master/ch10Psticky1.php
+https://github.com/wbw32000/Programs/blob/master/ch10Psticky1.php
+https://github.com/wbw32000/Programs/blob/master/ch10Pconverter.php
+
+
+.
