@@ -52,8 +52,8 @@ Pursue
  http://www./eclectichub.info/PHP/Ch10/ch10Psticky2.php 
 
 4. Come up with an idea for, create, and use your own custom function.
- Function to convert between metric and imperial weight units.
- http://www./eclectichub.info/PHP/Ch10/ch10Pconverter.php  // working on it 
+ Function to convert between metric and imperial weight units. OK.
+ http://www./eclectichub.info/PHP/Ch10/ch10Pconverter.php  
 
 Chapter Exercise Files:
 http://www./eclectichub.info/PHP/Ch10/PHPch10ReviewAndPursue.txt     
@@ -65,14 +65,13 @@ http://www./eclectichub.info/PHP/Ch10/ch10.5calculator.php
 Functional Pursue Files: 
 http://www./eclectichub.info/PHP/Ch10/ch10Pmenus.php
 http://www./eclectichub.info/PHP/Ch10/ch10Psticky1.php
-http://www./eclectichub.info/PHP/Ch10/ch10Psticky1.php
+http://www./eclectichub.info/PHP/Ch10/ch10Psticky2.php
 http://www./eclectichub.info/PHP/Ch10/ch10Pconverter.php
 
 Code Pursue Files: 
 https://github.com/wbw32000/Programs/blob/master/ch10Pmenus.php
 https://github.com/wbw32000/Programs/blob/master/ch10Psticky1.php
-https://github.com/wbw32000/Programs/blob/master/ch10Psticky1.php
+https://github.com/wbw32000/Programs/blob/master/ch10Psticky2.php
 https://github.com/wbw32000/Programs/blob/master/ch10Pconverter.php
-
 
 .
