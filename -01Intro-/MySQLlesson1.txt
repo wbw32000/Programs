@@ -1,0 +1,24 @@
+William BW (wbw(at)programmer.net)
+Learning MySQL - Part II - Using MySQL - Exercises
+
+Exercises
+1. What do we mean when we say that MySQL has a client-server architecture?
+ 1A: From chapter 3. It means clients connect to the server to perform database operations such as reading or storing data.
+
+2. Use the monitor help to look up information on the SELECT statement. (We’ll discuss SELECT in detail in Chapter 5.)
+
+3. What is the difference between using the monitor in interactive mode and using the monitor in batch mode?
+ 3A: In interactive mode, we enter SQL queries or MySQL commands such as SHOW DATABASES at the MySQL prompt, and see the results.
+ In batch mode, we tell the monitor to read in and execute a list of commands (sequence of operations) from a saved file.
+ This is useful when you need to run a large set of operations—for example, when you want to restore a database from a backup file.
+
+4. What do the monitor user, password, and database options do?
+ 4A0: The options can be specified on the command line or in the [mysql] and [client] groups of an option file...
+ 4A1: The user option provides the MySQL user name to use when connecting to the server.
+   It assigns ownership of the MySQL datafiles and folders to the specified user. e.g.
+   $ sudo scripts/mysql_install_db --user=mysql 
+ 4A2: The password option gets the password of the user to use when connecting to the server. e.g.
+   $ mysql --user=the_username 
+ 4A3: The database option sets the database to use.
+   
+.
